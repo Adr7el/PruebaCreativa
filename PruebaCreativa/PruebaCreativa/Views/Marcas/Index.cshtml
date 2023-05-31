@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PruebaCreativa.Models.Marca>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Administracion de las Marcas</h1>
+
+<p>
+    <a asp-action="Create">Agregar una nueva Marca</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreMarca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exactitud)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreMarca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Exactitud)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.NombreMarca">Editar</a> |
+                <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.NombreMarca">Detalles</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.NombreMarca">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

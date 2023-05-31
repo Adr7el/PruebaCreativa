@@ -1,0 +1,54 @@
+﻿@model PruebaCreativa.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar nuevo Prestamo</h1>
+
+<h4>Registro</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Persona" class="control-label"></label>
+                <input asp-for="Persona" class="form-control" />
+                <span asp-validation-for="Persona" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreMarca" class="control-label"></label>
+                <select asp-for="NombreMarca" class ="form-control" asp-items="ViewBag.NomMarca"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreEquipo" class="control-label"></label>
+                <input asp-for="NombreEquipo" class="form-control" />
+                <span asp-validation-for="NombreEquipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFin" class="control-label"></label>
+                <input asp-for="FechaFin" class="form-control" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <input asp-for="Estado" class="form-control" />
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Agregar" class="btn btn-primary" /> |
+                <a asp-action="Index" class="btn btn-light">Regresar a la Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

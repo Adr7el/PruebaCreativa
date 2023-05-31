@@ -1,0 +1,44 @@
+﻿@model PruebaCreativa.Models.Marca
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+<br />
+<h3>¿Esta seguro de que quiere borrar esta Marca?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreMarca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreMarca)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TipoH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Exactitud)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Exactitud)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        @*<input type="hidden" asp-for="NombreMarca" />*@
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-light">Regresar a la Lista</a>
+    </form>
+</div>
