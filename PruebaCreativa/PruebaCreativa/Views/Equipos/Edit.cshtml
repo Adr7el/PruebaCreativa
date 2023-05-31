@@ -1,0 +1,41 @@
+﻿@model PruebaCreativa.Models.Equipo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar un Equipo</h1>
+
+<h4>Campos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NumeroSerie" />
+            <div class="form-group">
+                <label asp-for="NombreMarca" class="control-label"></label>
+                <select asp-for="NombreMarca" class="form-control" asp-items="ViewBag.NMarca"></select>
+                <span asp-validation-for="NombreMarca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreEquipo" class="control-label"></label>
+                <input asp-for="NombreEquipo" class="form-control" />
+                <span asp-validation-for="NombreEquipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" /> |
+                <a asp-action="Index" class="btn btn-light">Regresar a la Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
